@@ -4,10 +4,10 @@ import SummaryForm from '../SummaryForm';
 
 test('Initial conditions', () => {
 	render(<SummaryForm />);
-	const checkbox = screen.getByRole('checkbox', { name: 'I agree to Terms and Conditions' });
+	const checkbox = screen.getByRole('checkbox', { name: /terms and conditions/i });
 	expect(checkbox).not.toBeChecked();
 
-	const confirmButton = screen.getByRole('button', { name: 'Confirm order' });
+	const confirmButton = screen.getByRole('button', { name: /confirm order/i });
 	expect(confirmButton).toBeDisabled();
 });
 
